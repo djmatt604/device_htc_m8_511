@@ -25,17 +25,17 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/du/config/common_full_phone.mk)
-$(call inherit-product, vendor/du/config/nfc_enhanced.mk)
+$(call inherit-product, vendor/nroken/config/common_full_phone.mk)
+$(call inherit-product, vendor/broken/config/nfc_enhanced.mk)
 
-# Inherit from hardware-specific part of the product configuration
+# Inherit from hardware-specific part of the product configuratLion
 # Inherit from device-specific configurations
 $(call inherit-product, device/htc/m8/device.mk)
 
 # Inherit m8-specific vendor tree
 $(call inherit-product-if-exists, vendor/htc/m8/m8-vendor.mk)
 
-PRODUCT_NAME := du_m8
+PRODUCT_NAME := broken_m8
 PRODUCT_DEVICE := m8
 PRODUCT_BRAND := htc
 PRODUCT_MODEL := One M8
