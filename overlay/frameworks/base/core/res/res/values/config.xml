@@ -297,6 +297,14 @@
          movement threshold where scrolling should begin. -->
     <dimen name="config_viewConfigurationTouchSlop">4dp</dimen>
 
+    <!-- The list absolute paths of jar/apk files containing the device specific handlers,
+         delimited by File.pathSeparator, which defaults to ":" on Android -->
+    <string name="config_deviceKeyHandlerLib" translatable="false">/system/app/DeviceHandler.apk</string>
+
+    <!-- Full qualified name of the class that implements
+         com.android.internal.os.DeviceKeyHandler interface. -->
+    <string name="config_deviceKeyHandlerClass" translatable="false">com.slim.device.KeyHandler</string>
+
     <!-- Configure wifi tcp buffersizes in the form:
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
     <string name="config_wifi_tcp_buffers" translatable="false">524288,1048576,2097152,262144,524288,1048576</string>
