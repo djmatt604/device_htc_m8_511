@@ -84,6 +84,10 @@ on init
     chown system /sys/devices/virtual/timed_output/vibrator/voltage_level
     restorecon /sys/devices/virtual/timed_output/vibrator/voltage_level
 
+# More Vibrator permissions
+    chown system system /sys/vibrator/pwmvalue
+    chmod 0644 /sys/vibrator/pwmvalue
+
 # Quick Charge 2.0 daemon
     setprop persist.usb.hvdcp.detect "true"
 

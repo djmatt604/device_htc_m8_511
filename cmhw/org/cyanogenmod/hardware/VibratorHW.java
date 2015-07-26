@@ -21,11 +21,17 @@ import org.cyanogenmod.hardware.util.FileUtils;
 
 public class VibratorHW {
 
-    private static String LEVEL_PATH = "/sys/devices/virtual/timed_output/vibrator/voltage_level";
+/*  private static String LEVEL_PATH = "/sys/devices/virtual/timed_output/vibrator/voltage_level";
+*/
+    private static String LEVEL_PATH = "/sys/vibrator/pwmvalue";
 
-    public static boolean isSupported() {
+/*    public static boolean isSupported() {
         File f = new File(LEVEL_PATH);
         return f.exists();
+    } */
+
+    public static boolean isSupported() {
+        return new File(LEVEL_PATH).exists();
     }
 
     public static int getMaxIntensity()  {
@@ -40,8 +46,11 @@ public class VibratorHW {
     public static int getCurIntensity()  {
         return Integer.parseInt(FileUtils.readOneLine(LEVEL_PATH));
     }
-    public static int getDefaultIntensity()  {
+/*    public static int getDefaultIntensity()  {
         return 2700;
+    } */
+    public static int getDefaultIntensity()  {
+        return getMaxIntensity();
     }
     public static boolean setIntensity(int intensity)  {
         return FileUtils.writeLine(LEVEL_PATH, String.valueOf(intensity));
